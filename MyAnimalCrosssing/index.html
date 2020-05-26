@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>あつ森だなも</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/header.js"></script>
+        
+    </head>
+    <body>
+        <h1>
+            <button id="login">Login</button>
+            <button id="logout" class="hidden">Logout</button>
+            
+            どうぶつの森　ただいまのおすすめ　メニュー
+        </h1>
+
+        <h5>
+            さかなつり　(※シーラカンスはあめのひだけ)
+        </h5>
+
+        <!--テーブル生成位置-->
+        <div id ='maintable' ></div>
+
+        <h5>
+            むしとり
+        </h5>
+
+        <!--テーブル生成位置-->
+        <div id ='maintable_in' ></div>
+        
+        <h1>
+            
+            <!--余白をいれたい-->
+        </h1>
+
+        <!-- 入力テーブル作成 -->
+        <form method="post" action="/sample/update">
+        <table>
+            <caption>データ登録</caption>
+            <tbody>
+            <tr><th>分類</th><td><select id="kind">
+                <!-- <option value="fish">さかな</option>-->
+                <option value="insect">むし</option></select></td></tr>
+            <tr><th>No</th><td><input type="text" id="no" autocomplete="off"></td></tr>
+            <tr><th>名前</th><td><input type="text" id="name" autocomplete="off"></td></tr>
+            <tr><th>魚影</th><td><input type="text" id="shadow" placeholder="1:極小、2:小、3:中、4:大、5:特大、6:細長、7:背ビレ" autocomplete="off" class="hidden"></td></tr>
+            <tr><th>場所</th><td><input type="text" id="place" placeholder="1:海、2:川、3:池、4:崖の上、5:桟橋、6:河口" autocomplete="off" class="hidden"></td></tr>
+            <tr><th>むしの場所</th><td><input type="text" id="place_in" placeholder="むしの場合は文字列入力" autocomplete="off"></td></tr>
+            <tr><th>ベル</th><td><input type="text" id="bell" autocomplete="off"></td></tr>
+            <tr><th>月_範囲1</th><td><input type="text" id="frto_month1" value="1-12" autocomplete="off"></td></tr>
+            <tr><th>月_範囲2</th><td><input type="text" id="frto_month2" placeholder="1-12(必須でない)" autocomplete="off"></td></tr>
+            <tr><th>時間_範囲1</th><td><input type="text" id="frto_hour1" value="0-24" autocomplete="off"></td></tr>
+            <tr><th>時間_範囲2</th><td><input type="text" id="frto_hour2" placeholder="0-24(必須)でない" autocomplete="off"></td></tr>
+
+            <tr><th></th><td><input type="submit" value="登録"></td></tr>
+        </tbody></table>
+        </form>
+
+
+        <!-- コレクションのリスト -->
+        <ul id="fishes" class="hidden"></ul>
+        <!--<form autocomplete="off" class="hidden">
+            <input type=="text" id="test" placeholder="your name...">
+        </form>-->
+
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+         
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+        <script src="js/main.js"></script>
+
+
+    </body>
+</html>
